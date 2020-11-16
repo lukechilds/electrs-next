@@ -10,7 +10,7 @@ The data dirs default to `./data/bitcoin` and `./data/electrs` relative to `dock
 
 To run:
 
-```
+```shell
 git clone https://github.com/lukechilds/electrs-next.git
 cd electrs-next
 docker-compose up
