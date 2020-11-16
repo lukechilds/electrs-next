@@ -2,7 +2,7 @@
 
 > Docker configuration for testing the `next` branch of electrs.
 
-Builds `romanz/bitcoin:locations` and `romanz/electrs:next` from source, fires off a mainnet Bitcoin Core node and starts the electrs indexer.
+Builds `romanz/bitcoin:locations` and `romanz/electrs:next` from source, starts a mainnet Bitcoin Core node and then runs the electrs indexer.
 
 Add relevant CLI flags in `docker-compose.yml` if you want to run testnet/regtest.
 
