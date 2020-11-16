@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+  bitcoin:
+    build:
+      context: .
+      dockerfile: bitcoin.Dockerfile
+    command: "-datadir=/data"
+    volumes:
+      - ./data/bitcoin:/data
+    network_mode: "host"
+    stop_grace_period: 15m
+  electrs:
+    build:
+     context: .
+     dockerfile: electrs.Dockerfile
+    command: "--network mainnet --db-dir /data --daemon-dir /bitcoin --low-memory"
+    restart: on-failure
+    volumes:
+      - ./data/bitcoin:/bitcoin:ro
+      - ./data/electrs:/data
+    network_mode: "host"
+    stop_grace_period: 5m
